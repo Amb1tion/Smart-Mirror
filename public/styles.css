@@ -1,16 +1,41 @@
 html {
     background-color : black;
+    color: white;
 }
 
-#time {
-    color: silver;
-
+#watch {
+    position:absolute;
+    top:63px;
+    right:10px;
 }
 
-#weather {
-    color: silver;
+.numbers {
+    font-family: "BankGothic Md BT";
+    font-size: 75px;
 }
 
-h1 {
-    color:silver;
+.words {
+    font-family: "BankGothic Md BT";
+    font-size: 45px;
+}
+
+#Temperature {
+    position:absolute;
+    top:0px;
+    left:120px;
+    display:inline;
+    font-family: "BankGothic Md BT";
+    font-size: 85px;
+}
+
+#Summary {
+    padding-left: 22px;
+    font-family:"BankGothic Md BT";
+    font-size:40px;
+}
+
+#Location {
+    padding-left: 22px;
+    font-family:"BankGothic Md BT";
+    font-size:30px;
 }

@@ -21,12 +21,12 @@ window.onload = () => {
         console.log(temp);
         mydiv=document.getElementById("Location");
         mydiv.innerHTML=temp.city + "," + temp.region;
-        function weather() {
+        function weather(temp) {
             var req2 = request("https://api.darksky.net/forecast/"+"a5e319be3b436c691f6b413334f2099f"+"/24.9206,67.0703"+"?units=si",
                 function (){
                     var temp2=JSON.parse(this.responseText);
                     var tempH= document.getElementById("Temperature");
-                    tempH.innerHTML=temp2.currently.temperature;
+                    tempH.innerHTML=Math.floor(temp2.currently.temperature)+"°C";
                     var summaryH= document.getElementById("Summary");
                     summaryH.innerHTML=temp2.currently.summary;
                     var icon = temp2.currently.icon;
@@ -41,9 +41,12 @@ window.onload = () => {
     });
     function time() {
         var d = new Date();
-        var payload = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+        var payload = d.toString("hh:mm");
         var mydiv = document.getElementById("time");
+        var mydiv2= document.getElementById("clock");
         mydiv.innerHTML= payload;
+        var date = new Date();
+        mydiv2.innerHTML= date.getHours() >= 12 ? 'PM':'AM'
     }
     time()
     setInterval(() => {

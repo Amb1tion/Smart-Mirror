@@ -15,16 +15,25 @@ function request(link,callback){
 }
 window.onload = () => {
 
+
     var req1 = request("//ipinfo.io/json",function () {
         var temp=JSON.parse(this.responseText);
         console.log(temp);
-        mydiv=document.getElementById("weather");
+        mydiv=document.getElementById("Location");
         mydiv.innerHTML=temp.city + "," + temp.region;
         function weather() {
             var req2 = request("https://api.darksky.net/forecast/"+"a5e319be3b436c691f6b413334f2099f"+"/24.9206,67.0703"+"?units=si",
                 function (){
                     var temp2=JSON.parse(this.responseText);
-                    console.log(temp2);
+                    var tempH= document.getElementById("Temperature");
+                    tempH.innerHTML=temp2.currently.temperature;
+                    var summaryH= document.getElementById("Summary");
+                    summaryH.innerHTML=temp2.currently.summary;
+                    var icon = temp2.currently.icon;
+                    var skycons = new Skycons({"color": "white", "resizeClear": true});
+                    skycons.set(document.getElementById("icon"),icon);
+                    skycons.play();
+                    console.log(temp2)
                 });
         }
         weather();

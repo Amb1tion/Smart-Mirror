@@ -3,10 +3,14 @@ html {
 }
 
 #time {
-    color: darkgrey;
+    color: silver;
 
 }
 
 #weather {
-    color: darkgrey;
+    color: silver;
+}
+
+h1 {
+    color:silver;
 }

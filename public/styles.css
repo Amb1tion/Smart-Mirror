@@ -3,39 +3,58 @@ html {
     color: white;
 }
 
+
+#break {
+    font-size: 80px;
+    position:absolute;
+    top:60px;
+    left:120px;
+    display:inline;
+}
+
 #watch {
     position:absolute;
     top:63px;
     right:10px;
 }
 
+#icon{
+    position:absolute;
+    top : -20px;
+    left : 60px;
+}
 .numbers {
-    font-family: "BankGothic Md BT";
+    font-family: "Century Gothic";
     font-size: 75px;
 }
 
 .words {
-    font-family: "BankGothic Md BT";
-    font-size: 45px;
+    font-family: "Century Gothic";
+    font-size: 25px;
 }
 
 #Temperature {
     position:absolute;
-    top:0px;
-    left:120px;
+    top:133px;
+    left:15px;
     display:inline;
-    font-family: "BankGothic Md BT";
-    font-size: 85px;
+    /*padding-left: 45px;*/
+    font-family: "Helvetica";
+    font-size: 40px;
 }
 
 #Summary {
-    padding-left: 22px;
-    font-family:"BankGothic Md BT";
-    font-size:40px;
+    position:relative;
+    padding-left: 185px;
+    top:105px;
+    font-family:"Century Gothic";
+    font-size:38px;
 }
 
 #Location {
-    padding-left: 22px;
-    font-family:"BankGothic Md BT";
+    position:relative;
+    font-family:"Century Gothic";
     font-size:30px;
+    padding-left: 135px;
+    top:78px;
 }

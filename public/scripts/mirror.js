@@ -20,7 +20,7 @@ window.onload = () => {
         var temp=JSON.parse(this.responseText);
         console.log(temp);
         mydiv=document.getElementById("Location");
-        mydiv.innerHTML=temp.city + "," + temp.region;
+        mydiv.innerHTML=temp.city + ", " + temp.region;
         function weather(temp) {
             var req2 = request("https://api.darksky.net/forecast/"+"a5e319be3b436c691f6b413334f2099f"+"/24.9206,67.0703"+"?units=si",
                 function (){

@@ -18,11 +18,11 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 
-app.get('/', (req,res) => {    //handling requests to home page which is represented by '/'
+app.get('/', function (req,res) {    //handling requests to home page which is represented by '/'
 	res.send('person');
 	});
 
-app.listen(port,() => {
+app.listen(port,function () {
 	console.log('Server started.');
 });
 

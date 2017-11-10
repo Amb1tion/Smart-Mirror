@@ -55,7 +55,7 @@ window.onload = () => {
   "July", "August", "September", "October", "November", "December"
 ];
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        mydiv3.innerHTML= days[date.getDay()] + " , " + monthNames[date.getMonth()] +" "+ date.getDate();
+        mydiv3.innerHTML= days[date.getDay()] + ", " + monthNames[date.getMonth()] +" "+ date.getDate();
         mydiv2.innerHTML= date.getHours() >= 12 ? 'PM':'AM'
 
     }

@@ -42,10 +42,15 @@ html {
     font-family: "Century Gothic";
     font-size: 75px;
 }
-
-.words {
+/*words1 = AM/PM 
+words2= Date */
+.words1 {
     font-family: "Century Gothic";
     font-size: 25px;
+}
+
+.words2 {
+
 }
 
 #Temperature {

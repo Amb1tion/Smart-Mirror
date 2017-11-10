@@ -24,6 +24,7 @@ window.onload = () => {
         function weather(temp) {
             var req2 = request("https://api.darksky.net/forecast/"+"a5e319be3b436c691f6b413334f2099f"+"/24.9206,67.0703"+"?units=si",
                 function (){
+                    try {
                     var temp2=JSON.parse(this.responseText);
                     var tempH= document.getElementById("Temperature");
                     tempH.innerHTML=Math.floor(temp2.currently.temperature)+"°C";
@@ -33,20 +34,30 @@ window.onload = () => {
                     var skycons = new Skycons({"color": "white", "resizeClear": true});
                     skycons.set(document.getElementById("icon"),icon);
                     skycons.play();
-                    console.log(temp2)
+                    console.log(temp2);
+                }
+                catch (e) {
+                    console.log(e);
+                }
                 });
         }
         weather();
-
     });
     function time() {
         var d = new Date();
         var payload = d.toString("hh:mm");
         var mydiv = document.getElementById("time");
         var mydiv2= document.getElementById("clock");
-        mydiv.innerHTML= payload;
+        var mydiv3= document.getElementById("date");
+        mydiv.innerHTML= payload;        
         var date = new Date();
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        mydiv3.innerHTML= days[date.getDay()] + " , " + monthNames[date.getMonth()] +" "+ date.getDate();
         mydiv2.innerHTML= date.getHours() >= 12 ? 'PM':'AM'
+
     }
     time()
     setInterval(() => {

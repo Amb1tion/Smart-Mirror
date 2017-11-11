@@ -54,11 +54,12 @@ words2= Date */
 }
 
 .words2 {
-    position:absolute;
+    position:relative;
     font-family: "Century Gothic";
     font-size: 25px;
-    top:72px;
+    /*top:72px;*/
     left:-51px;
+    margin-top:-4%;
 
 }
 
@@ -86,4 +87,10 @@ words2= Date */
     font-size:30px;
     padding-left: 140px;
     top:78px;
+}
+
+#music {
+    position:fixed;
+    bottom:0;
+    left:0;
 }

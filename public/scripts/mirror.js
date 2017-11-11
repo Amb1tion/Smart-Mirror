@@ -63,4 +63,25 @@ window.onload = () => {
     setInterval(() => {
         time()
     }, 1000);
+    function music() {
+        var url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=amb1tion&api_key=1e86169b32891afcbb0180749423e8d8&format=json&limit=1'
+        request(url,function () {
+            var info = JSON.parse(this.responseText);
+            var titleid= document.getElementById("track");
+            var artid=document.getElementById("art");
+            var albumid=document.getElementById("album");
+            var artistid=document.getElementById("artist");
+            var track = info.recenttracks.track[0].name;
+            var artist = info.recenttracks.track[0].artist["#text"];
+            var image = info.recenttracks.track[0].image[3]["#text"];
+            var album = info.recenttracks.track[0].album["#text"];
+            titleid.innerHTML=track;
+            artid.innerHTML="<img src="+image+">";
+            artistid.innerHTML=artist;
+            albumid.innerHTML=album;
+            console.log(info);
+            
+        })
+    }
+    music();
 }

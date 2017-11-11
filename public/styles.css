@@ -39,17 +39,26 @@ html {
     left : 60px;
 }
 .numbers {
+    position: relative;
     font-family: "Century Gothic";
     font-size: 75px;
+    right:22px;
 }
 /*words1 = AM/PM 
 words2= Date */
 .words1 {
+    position: relative;
     font-family: "Century Gothic";
     font-size: 25px;
+    right: 24px;
 }
 
 .words2 {
+    position:absolute;
+    font-family: "Century Gothic";
+    font-size: 25px;
+    top:72px;
+    left:-51px;
 
 }
 

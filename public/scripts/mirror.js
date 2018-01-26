@@ -69,19 +69,24 @@ window.onload = () => {
             var info = JSON.parse(this.responseText);
             var titleid= document.getElementById("track");
             var artid=document.getElementById("art");
-            var albumid=document.getElementById("album");
-            var artistid=document.getElementById("artist");
             var track = info.recenttracks.track[0].name;
             var artist = info.recenttracks.track[0].artist["#text"];
             var image = info.recenttracks.track[0].image[3]["#text"];
             var album = info.recenttracks.track[0].album["#text"];
-            titleid.innerHTML="<span>"+artist+" - "+ track +"<br />"+ album+"</span>";
-            artid.innerHTML="<img src="+image+">";
-            artistid.innerHTML=artist;
-            albumid.innerHTML=album;
+            if (titleid.innerHTML != "<span>"+artist+" - "+ track +"<br />"+ album+"</span>")
+            {
+                titleid.innerHTML="<span>"+artist+" - "+ track +"<br />"+ album+"</span>";
+            }
+            if (artid.innerHTML!="<img src="+image+">")
+            {
+                artid.innerHTML="<img src="+image+">";
+            }
             console.log(info);
             
         })
     }
     music();
+    setInterval(() => {
+        music();
+    },10000)
 }

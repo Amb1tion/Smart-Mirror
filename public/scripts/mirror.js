@@ -75,7 +75,7 @@ window.onload = () => {
             var artist = info.recenttracks.track[0].artist["#text"];
             var image = info.recenttracks.track[0].image[3]["#text"];
             var album = info.recenttracks.track[0].album["#text"];
-            titleid.innerHTML=track;
+            titleid.innerHTML="<span>"+artist+" - "+ track +"<br />"+ album+"</span>";
             artid.innerHTML="<img src="+image+">";
             artistid.innerHTML=artist;
             albumid.innerHTML=album;

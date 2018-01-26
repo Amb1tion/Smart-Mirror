@@ -73,6 +73,7 @@ words2= Date */
     font-size: 40px;
 }
 
+
 #Summary {
     position:relative;
     padding-left: 185px;
@@ -94,3 +95,21 @@ words2= Date */
     bottom:0;
     left:0;
 }
+
+#track {
+    position: absolute; 
+    top: 200px; 
+    left: 0; 
+}
+
+#track span {
+    display: block;
+    color: white; 
+    font: bold 24px;
+    font-family:"Century Gothic";
+    letter-spacing: -1px;  
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px; 
+}
+

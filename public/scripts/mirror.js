@@ -42,6 +42,9 @@ window.onload = () => {
                 });
         }
         weather();
+        setInterval(() => {
+            weather();
+        },900000)
     });
     function time() {
         var d = new Date();

@@ -1,8 +1,26 @@
-function request(link,callback){
+function request(link,callback,headers){
     var xhttp = new XMLHttpRequest();
     var proxy = 'https://cors-anywhere.herokuapp.com/';
     var interlink= proxy +link;
     xhttp.open('GET',interlink,true);
+    if (headers != undefined)
+    {
+        while(true)
+        {
+            var i=2;
+            var j=3;
+            if (arguments[j] != undefined)
+            {
+                xhttp.setRequestHeader(arguments[i],arguments[j]);
+                i++;
+                j++;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             if (typeof callback == "function"){
@@ -91,5 +109,19 @@ window.onload = () => {
     music();
     setInterval(() => {
         music();
-    },10000)
+    },10000);
+    function reminders() {
+        var req = request("https://beta.todoist.com/API/v8/tasks?token=27ef83a2ad89861d62af3e5046db2a4492fd412e", function () {
+            var info = JSON.parse(this.responseText);
+             console.log(info);
+             //put in a for loop that checks if an index in the json exists and then writes it onto screen as a task up to 5(?)
+        })
+    }
+    reminders();
+        
+    
+
+    
+
+
 }
